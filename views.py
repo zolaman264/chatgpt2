@@ -14,7 +14,7 @@ def chatbot(request):
         response=openai.Completion.create(
             engine='text-davinci-003',
             prompt=prompt,
-            max_tokens=150,
+            max_tokens=2048,
             #stop="."
             temperature=0.9,
             top_p=1,

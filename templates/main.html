@@ -1,14 +1,22 @@
 {%extends 'base.html'%}
+{% load crispy_forms_tags %}
 {% block content%}
-<h3>Write instruction</h3>
-<form method="POST">
-    {%csrf_token%}<input type="text" class="form-control" name="user_input">
-    <button type="submit" class="btn btn-primary mt-3">submit</button>
-</form>
+ <br>
+<div class="container">
+    <form class="container" method="POST">
+        {%csrf_token%}
+        
+        <h3>Hello my name is BKM</h3>
+        <h4>zelalem created me</h4>
+        ask me whatever you want <small>like who is prime minister of ethiopia?      </small>
+        <input type="text" class="form-control" name="user_input">
+        <button type="submit" class="btn btn-primary mt-3">Ask me</button>
+    </form>
 {%if response%}
-<div class="form-floating">
-    {{response|safe}}
+    <div class="form-floating">
+       <textarea  class="form-control" id="textAreaExample2" rows="8" style="height: 1000px;"> {{response | safe}} </textarea> 
 
+    </div>
 </div>
 {%endif%}
 
